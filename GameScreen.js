@@ -1,11 +1,12 @@
 //creates a GameScreen object
+
 var GameScreen = {
-    
     //the preload method runs first
     //it is where we load our assets
     preload : function() {
         //loads an image named 'logo'
         game.load.image('logo', '/assets/images/mission_bit_logo.png');
+        game.load.image('square', '/assets/images/square-game.jpg');
     },
     
     //the create method is run after the preload method
@@ -31,7 +32,16 @@ var GameScreen = {
         
         //make it so the mc can't leave the screen
         this.mc.body.collideWorldBounds = true;
-
+        
+        for (var i=0; i < 10; i++) {
+            for (var j=0; j < 6; j++){
+                this.temp = this.add.image(20+j*100, 25+i*50, 'square');
+                this.temp.scale.x = 0.05;
+                this.temp.scale.y = 0.05;
+            } 
+        }
+        
+        
     },
     
     //function that is called 60 times per second
