@@ -32,12 +32,14 @@ var GameScreen = {
         
         //make it so the mc can't leave the screen
         this.mc.body.collideWorldBounds = true;
+        var style = { font: '50px Arial', fill:'black', align: 'center'};
         
         for (var i=0; i < 10; i++) {
             for (var j=0; j < 6; j++){
                 this.temp = this.add.image(20+j*100, 25+i*50, 'square');
                 this.temp.scale.x = 0.05;
                 this.temp.scale.y = 0.05;
+                game.add.text(25+j*100,25+i*50,"2", style);
             } 
         }
         
